@@ -1,24 +1,10 @@
 "use client";
-import Image from "next/image";
 import { useEffect } from "react";
-import { gsap } from "gsap";
+import { initAnims } from "./ui/anims";
 
 export default function Home() {
     useEffect(() => {
-        gsap.from("#main-title", {
-            duration: 1,
-            y: -50,
-            opacity: 0,
-            ease: "power2.out"
-        });
-        
-        gsap.from("#main-title span", {
-            duration: 0.8,
-            x: -100,
-            opacity: 0,
-            ease: "power2.out",
-            delay: 0.5
-        });
+        initAnims();
     }, []);
 
     return (
