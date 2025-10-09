@@ -1,4 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# my shit
+.env
+ngrok
+.cursor
 
 # dependencies
 /node_modules
