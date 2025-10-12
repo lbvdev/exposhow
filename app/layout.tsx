@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./ui/globals.css";
 import "./ui/blocks.css";
-import ScrollSmootherWrapper from "./lib/scrollSmootherWrapper";
+import ScrollSmootherWrapper from "./lib/smoothWrapper";
 import PixelTrail from "./lib/pixelTrail";
 import Header from "./ui/header";
 

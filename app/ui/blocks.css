@@ -90,7 +90,7 @@ h3{
 
 .bg-red-gradient{
 	padding-top: 250px;
-	background: linear-gradient(#84000200, #840002, #A92C2D 750px);
+	background: linear-gradient(#84000200, #84000213 40%, #840002 80%, #A92C2D 1700px);
     /* background: radial-gradient(111.41% 100% at 50% 0%, rgba(132, 0, 2, 0.00) 0%, #840002 50%, #A92C2D 100%); */
 	mask-image: linear-gradient(to bottom, transparent 0, black 40px);
 }
