@@ -4,6 +4,7 @@ import "./ui/globals.css";
 import "./ui/blocks.css";
 import ScrollSmootherWrapper from "./lib/scrollSmootherWrapper";
 import PixelTrail from "./lib/pixelTrail";
+import Header from "./ui/header";
 
 const fliegeMono = localFont({
   src: [
@@ -76,6 +77,7 @@ export default function RootLayout({
           gooeyFilter={{ id: "custom-goo-filter", strength: 5 }}
         />
         <div id="smooth-wrapper">
+          <Header />
           <ScrollSmootherWrapper>
             {children}
           </ScrollSmootherWrapper>

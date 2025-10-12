@@ -5,6 +5,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+export const applyScrollEffects = (callback: (scroller: any) => void) => {
+  const checkScroller = () => {
+    if ((window as any).scroller) {
+      callback((window as any).scroller);
+    } else {
+      requestAnimationFrame(checkScroller);
+    }
+  };
+  checkScroller();
+};
+
 export default function ScrollSmootherWrapper({
   children,
 }: {
@@ -13,11 +24,13 @@ export default function ScrollSmootherWrapper({
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     
-    ScrollSmoother.create({
+    let scroller = ScrollSmoother.create({
       smooth: 1,
       effects: true,
       smoothTouch: 0.1,
     });
+
+    (window as any).scroller = scroller;
   }, []);
 
   return (

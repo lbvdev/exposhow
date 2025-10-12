@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .landing-page{
 	height: 100vh;
 	align-content: end;
@@ -7,6 +9,14 @@
 		font-weight: 600;
 		line-height: 90%;
 		will-change: transform;
+
+		& > div{
+	    background-color: #d8d3cdb5;
+	    border: 1px solid #d8d3cd;
+	    backdrop-filter: blur(10px);
+	    padding-bottom: 120px;
+	    margin-bottom: -120px;
+		}
 	}
 }
 
@@ -55,10 +65,10 @@ h3{
     font-size: min(4rem, 6vw);
 }
 .text-shadow-effect{
-    position: relative;
-    color: var(--red-light-color);
-
-    &::before {
+	position: relative;
+	color: var(--red-light-color);
+	
+	&::before {
 		content: attr(data-text);
 		position: absolute;
 		top: 0;
@@ -67,7 +77,7 @@ h3{
 		-webkit-text-stroke-width: 6px;
 		-webkit-text-stroke-color: #fff;
 		color: transparent;
-
+				
 		text-shadow: 
 			1px 1px 0 #fff,
 			2px 2px 0 #fff,
@@ -81,6 +91,7 @@ h3{
 .bg-red-gradient{
 	padding-top: 250px;
 	background: linear-gradient(#84000200, #840002, #A92C2D 750px);
+    /* background: radial-gradient(111.41% 100% at 50% 0%, rgba(132, 0, 2, 0.00) 0%, #840002 50%, #A92C2D 100%); */
 	mask-image: linear-gradient(to bottom, transparent 0, black 40px);
 }
 
@@ -95,7 +106,86 @@ h3{
 	width: 100%;
 	height: 100%;
 	background: url('/images/gradient-bg.svg') no-repeat;
-    background-size: cover;
+	background-size: cover;
 	z-index: -1;
 	mask-image: linear-gradient(to bottom, transparent, black);
+}
+
+
+/* header */
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+}
+
+.logo-button{
+	position: relative;
+	background-color: #a92c2c12;
+	border: solid 1px #a92c2c12;
+	box-sizing: border-box;
+}
+.nav-absloute{
+	position: absolute;
+	top: 0;
+	left: 77px;
+	height: 100%;
+	background-color: #a92c2c12;
+	border: solid 1px #a92c2c12;
+
+	a{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 16px 21px;
+		background-color: var(--bg-color);
+	}
+	a.bg-fill{
+		padding: 0;
+		width: 46px;
+		background-color: transparent;
+	}
+}
+.nav-absloute{
+	opacity: 0;
+	pointer-events: none;
+	transform: scaleX(0.5);
+	transform-origin: left;
+	transition: all 0.4s, opacity 0.3s 0.1s;
+	a{
+		transform: scaleX(0);
+		transform-origin: left;
+		&:hover{
+			background-color: transparent;
+		}
+	}
+	a:nth-child(1){
+		transform: scaleX(1);
+		transition: all 0.4s;
+	}
+	a:nth-child(2){
+		transition: all 0.4s, transform 0.5s;
+	}
+	a:nth-child(3){
+		transition: all 0.4s, transform 0.5s;
+	}
+	a:nth-child(4){
+		transition: all 0.4s, transform 0.6s;
+	}
+	a:nth-child(5){
+		transition: all 0.4s, transform 0.8s;
+	}
+}
+header.scrolled .logo-button:hover{
+	.nav-absloute{
+		opacity: 1;
+		pointer-events: initial;
+		transform: scaleX(1);
+		a{
+			transform: scaleX(1);
+		}
+	}
 }

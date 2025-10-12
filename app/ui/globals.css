@@ -41,40 +41,43 @@ p{
 
 a{
 	font-weight: 600;
+	transition: all 0.4s;
 }
 
-a{
-	position: relative;
-	transition: all 0.4s;
+a:not(.not-default){
 	padding: 4px 8px;
+}
+a.hover-square{
+	position: relative;
 	margin-left: 0;
-	margin-right: 19px;
-}
-a::before{
-	content: "";
-	position: absolute;
-	top: 9px;
-	left: -12px;
-	width: 12px;
-	height: 12px;
-	background: var(--color-red-dark-color);
-	color: var(--color-bg-color);
-	transition: all 0.4s;
+  padding-right: 24px;
 
-	transform: rotate(45deg) scale(0);
-	opacity: 0;
+	&::before{
+		content: "";
+		position: absolute;
+		top: 9px;
+		left: -12px;
+		width: 12px;
+		height: 12px;
+		background: var(--color-red-dark-color);
+		color: var(--color-bg-color);
+		transition: all 0.4s;
+
+		transform: rotate(45deg) scale(0);
+		opacity: 0;
+	}
+	&:hover{
+		margin-left: 12px;
+		margin-right: 0;
+		color: var(--color-red-dark-color);
+	}
+	&:hover::before{
+		transform: rotate(145deg) scale(1);
+		opacity: 1;
+	}
 }
-a:hover{
-	margin-left: 12px;
-	margin-right: 0;
-	color: var(--color-red-dark-color);
-	/* background: var(--color-red-light-color);
-	color: var(--color-bg-color); */
-}
-a:hover::before{
-	transform: rotate(145deg) scale(1);
-	opacity: 1;
-}
+
+
 
 button{
 	position: relative;
@@ -116,10 +119,10 @@ a:focus, button:focus, [role="button"]:focus, input[type="button"]:focus, input[
 	cursor: url('/cursors/cursor-pointer.svg') 12 12, pointer !important;
 }
 .clickable, .cursor-pointer {
-	cursor: url('/cursors/cursor-pointer.svg') 12 12, pointer;
+	cursor: url('/cursors/cursor-pointer.svg') 12 12, pointer !important;
 }
 .cursor-default {
-	cursor: url('/cursors/cursor-default.svg') 12 12, default;
+	cursor: url('/cursors/cursor-default.svg') 12 12, default !important;
 }
 
 ::selection{

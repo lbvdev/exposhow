@@ -41,7 +41,7 @@ interface PixelTrailProps {
 
 const GooeyFilter: React.FC<GooeyFilterProps> = ({ id = 'goo-filter', strength = 10 }) => {
   return (
-    <svg className="fixed overflow-hidden z-1">
+    <svg className="fixed overflow-hidden z-1 pointer-events-none">
       <defs>
         <filter id={id}>
           <feGaussianBlur in="SourceGraphic" stdDeviation={strength} result="blur" />
