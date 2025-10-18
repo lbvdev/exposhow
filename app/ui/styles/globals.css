@@ -9,8 +9,10 @@
 }
 
 :root {
-	--bg-color: #D8D3CD;
+	--bg-color: #ECE8E3;
+	--bg-05-color: #ECE8E3B5;
 	--red-light-color: #A92C2D;
+	--red-light-12-color: #E3D1CC;
 	--red-dark-color: #840002;
 }
 
@@ -41,7 +43,7 @@ p{
 
 a{
 	font-weight: 600;
-	transition: all 0.4s;
+	transition: all 0.4s, opacity 0.25s;
 }
 
 a:not(.not-default){
@@ -68,11 +70,11 @@ a.hover-square{
 	}
 	&:hover{
 		margin-left: 12px;
-		margin-right: 0;
+		padding-right: 0;
 		color: var(--color-red-dark-color);
 	}
 	&:hover::before{
-		transform: rotate(145deg) scale(1);
+		transform: rotate(135deg) scale(1);
 		opacity: 1;
 	}
 }
@@ -128,4 +130,11 @@ a:focus, button:focus, [role="button"]:focus, input[type="button"]:focus, input[
 ::selection{
 	background: var(--color-red-light-color);
 	color: var(--color-bg-color);
+}
+
+
+img{
+	user-select: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
 }

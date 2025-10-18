@@ -1,64 +1,116 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
-import { useEffect } from "react";
+import BackgroundImages from "./ui/bgImages";
+import StyledText from "./ui/styledText";
 
 export default function Home() {
-      
-    useEffect(() => {
+  return (
+    <main>
+      <section className="landing-page p-2">
+        <BackgroundImages />
+        <h1 id="main-title">
+          <StyledText text="EXPO" />
+          <br />
+          <span className="pl-[clamp(0px,10vw,10rem)]">
+            <StyledText text="SHOW" color="gray" />
+          </span>
+        </h1>
+      </section>
 
+      <section data-speed="1.6" id="story-page" className="flex flex-col justify-between p-10 h-[100vh] bg-red-gradient text-white">
+        <div data-speed="0.7" className="bg-red-gradient-image"></div>
+        <h1 className="font-black large-title styled" data-text="История">
+          История
+        </h1>
+        <div id="scroll-horizontal">
+          <StoryEvents />
+        </div>
+      </section>
 
-    }, []);
-
-
-    return (
-        <main>
-            <div className="landing-page bg-bg-color p-2">
-                <h1 id="main-title" className="split">EXPO<br/><span className="pl-[clamp(0px,10vw,10rem)]">SHOW</span></h1>
-            </div>
-
-            <div data-speed="1.6" id="story-page" className="flex flex-col p-2 scroll-horizontal bg-red-gradient text-white">
-                <div data-speed="0.7" className="bg-red-gradient-image"></div>
-                <h1 className="font-black large-title styled" data-text="История">История</h1>
-                
-                <StoryEvents/>
-
-            </div>
-        </main>
-    );
+      <div className="landing-page p-2 bg-bg-color">
+        <h1 id="main-title">
+          EXPO
+          <br />
+          <span className="pl-[clamp(0px,10vw,10rem)]">SHOW</span>
+        </h1>
+      </div>
+    </main>
+  );
 }
 
 export function StoryEvents() {
-    let storyEvents = [
-        {
-            date: "1995",
-            title: "EXPO SHOW была основана группой энтузиастов выставочного бизнеса с видением создания лучшей выставочной компании в России.",
-            images: [
-            ],
-        },
-        
-        {
-            date: "2005",
-            title: "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
-            images: [
-            ],
-        },
-    ];
+  let storyEvents = [
+    {
+      date: "1995",
+      title:
+        "EXPO SHOW была основана группой энтузиастов выставочного бизнеса с видением создания лучшей выставочной компании в России.",
+      images: [],
+    },
+    {
+      date: "2005",
+      title:
+        "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
+      images: [],
+    },
+    {
+      date: "2005",
+      title:
+        "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
+      images: [],
+    },
+    {
+      date: "2005",
+      title:
+        "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
+      images: [],
+    },
+    {
+      date: "2005",
+      title:
+        "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
+      images: [],
+    },
+    {
+      date: "2005",
+      title:
+        "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
+      images: [],
+    },
+    {
+      date: "2005",
+      title:
+        "Организация первой крупной международной выставки промышленного оборудования с участием более 200 компаний из 15 стран.",
+      images: [],
+    },
+  ];
 
-    return(
-        <div className="flex gap-12">
-            {storyEvents.map((event, index) => (
-                <div key={index} className="date-item active max-w-[476px]">
-                    <div className="image-wrapper flex">
-                        {event.images.map((image, index) => (
-                            <Image key={index} src={image} width={216} height={216} alt={event.title} />
-                        ))}
-                    </div>
-                    <h3 className="text-shadow-effect" data-text={event.date}>{event.date}</h3>
-                    <p>{event.title}</p>
-                </div>
+  return (
+    <div className="flex gap-12 scrollable-block">
+      {storyEvents.map((event, index) => (
+        <div key={index} className="date-item active max-w-[640px]">
+          <div className="image-wrapper flex">
+            {event.images.map((image, index) => (
+              <Image
+                key={index}
+                src={image}
+                width={216}
+                height={216}
+                alt={event.title}
+              />
             ))}
+          </div>
+          <div className="flex flex-col gap-8">
+            <img
+              className="date-img"
+              src={`img/dates/${event.date}.svg`}
+              alt={event.date}
+              height={54}
+            />
+            <p>{event.title}</p>
+          </div>
         </div>
-    )
+      ))}
+    </div>
+  );
 }

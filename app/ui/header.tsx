@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <header className="flex justify-between items-start py-9 px-12 right-0 z-10 scrolled">
             <LogoHeaderButton />
-            <nav className="flex flex-col">
+            <nav id="header-start-links" className="flex flex-col">
                 <Link href="#" className="hover-square">главная </Link>
                 <Link href="#story-page" className="hover-square">история</Link>
                 <Link href="#" className="hover-square">проекты</Link>

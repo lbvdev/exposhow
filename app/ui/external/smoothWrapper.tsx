@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { initAnims } from "../anims";
 
 export const applyScrollEffects = (callback: (scroller: any) => void) => {
   const checkScroller = () => {
@@ -31,6 +32,8 @@ export default function ScrollSmootherWrapper({
     });
 
     (window as any).scroller = scroller;
+    
+    initAnims();
   }, []);
 
   return (
