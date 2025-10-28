@@ -69,7 +69,6 @@ export default function BackgroundImages() {
   return (
     <div
       className="bg-images"
-      style={{ position: "fixed", inset: 0, overflow: "hidden" }}
     >
       {[...Array(32)].map((_, i) => {
         const rotate = Math.floor(Math.random() * 40) - 20;
