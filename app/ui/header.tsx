@@ -20,7 +20,7 @@ export default function Header() {
 
 export function LogoHeaderButton() {
     return (
-        <div className="flex logo-button">
+        <div className="flex logo-button" style={{opacity: 0}}>
             <Link href="/" className="flex items-center gap-2 bg-red-light-color text-bg-color px-[3px] py-[3px] pr-[26px] not-default">
                 <span className="leading-none text-xl font-normal m-0 cursor-pointer">EXPO<br/>SHOW</span>
             </Link>

@@ -1,33 +1,39 @@
 .scroll-horizontal {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
+	display: flex;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
 }
 
 .scroll-horizontal .flex {
-    gap: 2rem;
-    min-width: max-content;
+	gap: 2rem;
+	min-width: max-content;
 }
 
-.landing-page{
-	height: 100vh;
-	align-content: end;
+#main-title{
+  font-size: min(30vw, 32rem);
+	font-weight: 600;
+	line-height: 70%;
+	will-change: transform;
 
-	#main-title{
-		font-size: min(30vw, 24rem);
-		font-weight: 600;
-		line-height: 90%;
-		will-change: transform;
-
-		& > div{
+	& > div{
 	    background-color: var(--bg-05-color);
 	    border: 1px solid var(--bg-color);
 	    backdrop-filter: blur(10px);
 	    padding-bottom: 120px;
 	    margin-bottom: -120px;
-		}
 	}
+}
+
+#main-title-placeholder{
+  font-size: min(30vw, 32rem);
+	font-weight: 600;
+	line-height: 70%;
+}
+
+.landing-page{
+	height: 100vh;
+	align-content: end;
 }
 
 
@@ -254,7 +260,7 @@ header.scrolled .logo-button:hover{
 		transform-origin: center;
 		width: 12px;
 		filter: grayscale(1);
-		transition: transform 0.3s ease-out, filter 0.15s ease-out;
+		/* transition: transform 0.3s ease-out, filter 0.15s ease-out; */
 	}
 }
 

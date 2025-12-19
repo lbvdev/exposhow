@@ -1,36 +1,12 @@
-import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import "./ui/styles/globals.css";
 import "./ui/styles/blocks.scss";
-import ScrollSmootherWrapper from "./ui/external/smoothWrapper";
-import PixelTrail from "./ui/external/pixelTrail";
+import "./ui/styles/globals.css";
+import { fliegeMono, modak } from "./ui/fonts";
+import type { Metadata, Viewport } from "next";
 import Header from "./ui/header";
-
-const fliegeMono = localFont({
-  src: [
-    {
-      path: "../public/fonts/FliegeMono-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/FliegeMono-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/FliegeMono-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/FliegeMono-Black.woff2",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-fliege-mono",
-});
+import FrameOutline from "./ui/components/FrameOutline";
+import ScrollSmootherWrapper from "./ui/external/SmoothWrapper";
+import PixelTrail from "./ui/external/PixelTrail";
+import MainTitle from "./ui/components/MainTitle";
 
 export const metadata: Metadata = {
   title: "ExpoShow",
@@ -66,9 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${fliegeMono.variable} antialiased`}>
+      <body className={`${fliegeMono.variable} ${modak.variable} antialiased`}>
+        <MainTitle />
         <div id="smooth-wrapper">
           <Header />
+          <FrameOutline></FrameOutline>
           <ScrollSmootherWrapper>{children}</ScrollSmootherWrapper>
           <PixelTrail
             gridSize={50}

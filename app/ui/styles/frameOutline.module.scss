@@ -1,0 +1,12 @@
+.frameOutline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  border: 11px solid rgba(92, 52, 52, 0.18);
+  outline: 999px solid rgba(92, 52, 52, 0.18);
+  border-radius: 24px;
+  z-index: 2;
+}

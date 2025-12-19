@@ -1,21 +1,21 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import BackgroundImages from "./ui/bgImages";
-import StyledText from "./ui/styledText";
+import BackgroundImages from "./ui/components/BgImages";
+import StyledText from "./ui/components/StyledText";
 
 export default function Home() {
   return (
     <main>
       <section className="landing-page p-2">
         <BackgroundImages />
-        <h1 id="main-title">
+        <div id="main-title-placeholder" aria-hidden="true" style={{ visibility: 'hidden', pointerEvents: 'none' }}>
           <StyledText text="EXPO" />
           <br />
           <span className="pl-[clamp(0px,10vw,10rem)]">
             <StyledText text="SHOW" color="gray" />
           </span>
-        </h1>
+        </div>
       </section>
 
       <section data-speed="1.6" id="story-page" className="flex flex-col justify-between p-10 h-[100vh] bg-red-gradient text-white">
@@ -29,11 +29,6 @@ export default function Home() {
       </section>
 
       <div className="landing-page p-2 bg-bg-color">
-        <h1 id="main-title">
-          EXPO
-          <br />
-          <span className="pl-[clamp(0px,10vw,10rem)]">SHOW</span>
-        </h1>
       </div>
     </main>
   );
